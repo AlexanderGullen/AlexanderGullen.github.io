@@ -15,6 +15,8 @@ The primary tools I used for this project are:
 -	Plotly for visualization
 -	GeoPy for Geocoding
 -	Draw.io for visualizing
+
+
 Out of all these choices, the only one I was really disappointed with was Draw.io which, frankly, I don’t think I was using right. 
 Draw.io provides a powerful suite of tools for creating vector graphics – that is, graphics that will not get lose quality when sized up or down – in the form of SVG files. Since plotly also allowed for the export of SVGs I thought it would be perfect for taking the SVG files from plotly, decorating them with the static graphics, then exporting them as a SVG file and resizing the file to the size I wanted. In this case however, I think too much editing was done on my part which dragged down performance and slowed down my work.
 
