@@ -1,3 +1,8 @@
+---
+layout: post
+title: Visualizing the distribution of datacenters for 5 major cloud providers
+---
+
 # Visualizing the distribution of datacenters for 5 major cloud providers
 
 Everybody knows that cloud hyperscalers operate a small army worth of datacenters across various regions, countries, and continents. But having just received my AZ-900 Azure Fundamentals certification at the time I wanted a better way to visualize where these datacenters are physically located.
