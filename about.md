@@ -30,4 +30,6 @@ When I have the time I also enjoy reading, a particularly memorable reading was 
 
 [alexmgullen@gmail.com](mailto:alexmgullen@gmail.com)
 
+## Sources
+
 [^1]: Philip Schieber (1987). "The Wit and Wisdom of Grace Hopper", OCLC newsletter, No 167 (<https://www.cs.yale.edu/homes/tap/Files/hopper-wit.html>)
