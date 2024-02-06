@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm a computer programmer from Sudbury Ontario [- Once a training ground for apollo 16 astronauts -](https://www.thesudburystar.com/news/local-news/its-been-50-years-since-nasas-apollo-16-astronauts-walked-on-sudbury)
+I'm a computer programmer from Sudbury Ontario [- A place once used as a training ground for apollo 16 astronauts -](https://www.thesudburystar.com/news/local-news/its-been-50-years-since-nasas-apollo-16-astronauts-walked-on-sudbury)
 
 My first experience with coding came when I discovered open source programs, this eventually grew into a passion for coding and problem solving then system design and now project management, CI/CD, AI and Data Analysis.
 
@@ -14,7 +14,7 @@ I am dedicated to being as Responsible, Courageous, and Collaborative as possibl
 
 - Responsibility has many definitions, but my preferred definitions all involve consequences. Only from a complete understanding of the consequences our actions have on others and on ourselves can we better the world.
 
-- Courage is the capacity to push yourself out of your comfort zone. Courage is essential to living new experiences, challenging the norm, and thinking outside the box
+- Courage is the capacity to push yourself out of your comfort zone. Courage is essential to living new experiences, challenging the norm, and thinking outside the box.
 
 > Humans are allergic to change. They love to say, "We've always done it this way." - Grace Hopper [^1]
 
