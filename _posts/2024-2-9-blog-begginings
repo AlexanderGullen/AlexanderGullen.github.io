@@ -1,0 +1,40 @@
+---
+layout: post
+title: Why I chose to host my blog with github pages
+---
+For a developer, a personal website or portfolio is an important part of your digital presence acting as a place where you can express yourself, show the work you are proud of, contribute your solutions to problems found online, and of course have junior developers come and copy those solutions.
+
+Various technologies are used for hosting portfolio websites from the least abstract technologies like HTML, CSS and JavaScript to full LAMP/MERN stacks, or anything in between. Some people even choose a web frameworks like Ruby on Rails, ASP.NET, Spring, PHP, Express, etc. But in this post I will be going talking about why I believe that github pages is the best place to host my personal website, why you might want to host you personal website on github pages, and why you might not want to.
+
+# My github pages website
+I recently setup a blog website on github pages using [this](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/) tutorial, while I am very happy with the result, I wanted to do a deeper dive into this technology.
+
+## Advantages
+
+By choosing github pages I commit to using PaaS technology, with github as the infrastructure and Jekyll as the platform.
+
+|                | IaaS  | PaaS  | SaaS  |
+|----------------|-------|-------|-------|
+| Infrastructure | Cloud | Cloud | Cloud |
+| Platform       | Yours | Cloud | Cloud |
+| Sofware        | Yours | Yours | Cloud |
+
+As you can see from the chart above a pass model allows me to do the most software development without having to devote valuable time to manage, configure and update the infrastructure or platform on which my blog is hosted on.
+
+GitHub pages naturally uses a lot of git and GitHub, including some CI/CD features such as github deployments and actions. As a junior developer, I feel this experience working with a technology that is so ubiquitous in the industry is much more valuable than working with any of the thousands of web technologies that could be implemented at any given company. Using github also increases the likelihood you will continue contributing to your blog as rather than having to go through some CRM system each time you want to make a post. GitHub repos were made to be maintained and are in a very real way “live software” by using GitHub to host your blog you are not only challenging yourself to be more consistent in posting content, but also more consistent in contributing to GitHub.
+
+Finally, GitHub pages are FAST. The technology is made for hosting extensive documentation and the response speeds match that ideology. This means that even with a free account my website responds almost immediately, compared to some cloud platforms where the free tier takes several seconds to respond and It’s clear why I think github is much better for junior developers who cannot afford the more expensive cloud compute tiers.
+
+## Disadvantages
+
+While using a PaaS model is helpful for the time and troubles it takes, there is an argument to be made that using PaaS as a developer limits your exposure to the underlying technologies and prevents us from being able to configure the infrastructure and platform to the exact degree required. It also means that you will miss out on the practice you would get configuring and managing the infrastructure and Platform.
+
+While using GitHub to host your website has many advantages, the fact you lose the oppertunity to really specialize in a specific technology.
+
+Finally while pages hosted with github are Fast, they are somewhat limiting. Jekyll, the static site generation I use, can only host a limited amount of HTML and for blog posts your only real option is markdown, which is good for developers who want to get more familiar with markdown, but bad for developers who want to more customization or variety in their applications and since it is a static site, there are very few impressive tricks you can pull off with the code.
+
+
+# Conclusion
+
+As with any technology, there are tradeoffs that must be made. In this case most of the tradeoffs revolve around time and experience. With GitHub and Jekyll I was able to deploy a website with little configuration, using a technology that is valuable everywhere, and Fast. In my circumstances right now, I feel the tradeoffs are worth it. Maybe this will change in the future but for now I am very happy to just be experimenting and learning about the more advanced features of github
+
