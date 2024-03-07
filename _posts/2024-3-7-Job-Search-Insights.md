@@ -48,5 +48,5 @@ Finally, remember for feedback as much as you ask for help, and ask for help at 
 
 Good luck out there. 
 
-This is a non-exhaustive list and will be updated as time goes on, do you have any feedback or suggestions you want to add? comment them on my LinkedIn post and I will review them accordingly.
+This is a non-exhaustive list and will be updated as time goes on, do you have any feedback or suggestions you want to add? comment them on [my LinkedIn post](https://www.linkedin.com/posts/alex-m-gullen_key-insights-i-learned-from-my-coop-job-search-activity-7171516047756353536-Jz6O?utm_source=share&utm_medium=member_desktop) and I will review them accordingly.
 
