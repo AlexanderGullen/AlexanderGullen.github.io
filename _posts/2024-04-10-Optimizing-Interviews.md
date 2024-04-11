@@ -3,6 +3,8 @@ layout: post
 title: Optimizing your interview
 ---
 
+Recently I have been fortunate enough to have several people ask for interview advice, so I compiled 5 invaluable steps for anyone – student or otherwise – to do before, during and after an interview.
+
 ## 1. Research the company
 
 While you should already have done this during the resume stage, keeping up to date with the information of the company you applied to is essential, and it never hurts to spend a little time refreshing your memory by going back and reviewing the companies LinkedIn, reports or news which could serve as effective icebreakers during the interview.
