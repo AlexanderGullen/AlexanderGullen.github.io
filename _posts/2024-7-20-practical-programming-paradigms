@@ -1,0 +1,36 @@
+---
+layout: post
+title: Practical Programming Paradigms, your guid to the 5 most common programming paradigms
+---
+
+# what is a programming paradigms
+Programming paradigms form the foundation of high-level programming languages, with most languages incorporating multiple paradigms to maximize versatility. In this article, I will explore the two main categories of paradigms and five distinct programming styles, covering a wide range of languages and topics.
+ 
+## Imperative Programming
+Imperative programming, derived from the Latin word "imperare" meaning "to command," revolves around giving the computer step-by-step instructions on how to solve a problem. Imperative programming encompasses three main styles: Procedural, Structured and Object Oriented.
+
+## Procedural Programming:
+Procedural programming is the style most modern programmers will be familiar with programs broken down into procedures or functions and stored in different modules each with their own scope. The scope of each module is important as it allows for a separation of concern and prevents polluting the global namespace. Procedural programming also supports code reuse allowing for the creation of software libraries and elimination of repeat code. Examples of languages that implement the procedural programming paradigm include Fortran, Basic, Pascal and C
+ 
+## Structured Programming:
+Structured Programming can be thought of as a subset of early imperative programming that moved away from "go-to" statements in favor of subroutines, code blocks, and control flow. While these programs still executed in a linear fashion, stored blocks of code such as procedures, functions, and methods could be created and executed, with the caveat that there was only one exit condition—no multiple return statements were allowed. Another modern amenity that structured programming introduced was control flow using if statements and while loops, which allowed for branching logic inside linear programs without relying on the previously ubiquitous "go-to" statement, which, despite its flaws, had been standard practice at the time. While features championed by Structured Programming are commonplace in many languages, most of the notable features of the languages that implemented this paradigm, such as ALGOL 58 and ALGOL 60, were revolutionary only for the 50s and 60s. You will seldom find a modern programming language built around the structured programming paradigm.
+ 
+## Object Oriented Programming:
+Object-Oriented Programming is one of the most common programming paradigms. Object-Oriented Programming (or OOP) revolves around the idea that everything is represented as an object with attributes and methods that belong to objects, encapsulating all the information about that object inside one "state" that can interact with other objects. The interaction of these objects determines the logic of the program. While the degree of conformity with the OOP paradigm depends on the implementation, languages that support the paradigm include Java, C++, Smalltalk, R, Python, and many more.
+ 
+## Declarative programming
+Declarative programming focuses on defining the desired state of the program without specifying the steps to achieve that state. As a result, these programs can be more complex and harder to read than imperative programs but are typically shorter and less prone to unexpected side effects. The two most common styles of declarative programming are functional programming and logic programming:
+
+## Functional Programming:
+In imperative programming, variables often change during the program's execution, such as those controlling loops and attributes. In contrast, functional programming avoids any form of program state. Variables are stored as function calls in a "referentially transparent" manner rather than as the result of function calls. Functions given the same input will always return the same output. Recursion is a crucial aspect of many functional programming languages, and some implement full tail recursion, meaning recursive function calls have minimal overhead and use no extra memory. This allows for deeper recursion using fewer resources. Lua is an excellent example of a language with full tail recursion, along with other languages such as Haskell, Lisp, OCaml, Clojure, Elixir, and Ada.
+ 
+## Logic Programming:
+Logic programming is based on predicate calculus, a branch of mathematics that uses logic statements, known as "predicates," to solve problems. Predicates can either be facts, which act like variables, or statements, which describe the conditions under which a relationship is valid. This approach is quite different from what most programmers are accustomed to but can be very useful, particularly in fields like artificial intelligence and natural language processing. Prolog, Datalog, and Answer Set Programming (ASP) are the primary languages that implement this paradigm.
+
+# Conclusion
+Ultimately, the time and cost constraints of a project usually determine which paradigms are followed in the codebase. In the end, they all get compiled or interpreted as similar instructions. However, an in-depth understanding of software paradigms can shift your coding perspective and teach you more about the mathematical engines that support the modern digital world.
+ 
+# Further Reading:
+https://learn.microsoft.com/en-us/dotnet/standard/linq/functional-vs-imperative-programming
+https://www.ionos.com/digitalguide/websites/web-development/imperative-programming/
+https://www.linode.com/docs/guides/logic-programming-languages/
