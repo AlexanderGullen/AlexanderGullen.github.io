@@ -50,8 +50,8 @@ function backgroundRender(canvas,context,time,code){
 const [subtitleGaussianValue,heroBackgroundGaussianValue] = boxMuller(Math.random(),Math.random())
 
 //TODO: update these to a more mathematically rigourous (and computationally efficient) value
-const subtitleIndex = Math.abs(Math.floor(subtitleGaussianValue * subtitles.length % subtitles.length))
-let heroBackgroundIndex = Math.abs(Math.floor(heroBackgroundGaussianValue * backgrounds.length % backgrounds.length))
+const subtitleIndex = Math.abs(Math.floor(subtitleGaussianValue * subtitles.length) % subtitles.length)
+let heroBackgroundIndex = 1 //Math.abs(Math.floor(heroBackgroundGaussianValue * backgrounds.length) % backgrounds.length)
 
 /* Subtitle */
 
@@ -72,18 +72,18 @@ const x = c.getContext("2d");
 const heroFpsIndicator = document.getElementById("fps");
 let secondsPassed = 0;
 let frameStart = 0;
-
+//TODO: replace "new Date()" with a more modern version
+let startTime = new Date();
 console.log(heroBackgroundIndex)
-console.log(backgrounds[heroBackgroundIndex].code)
 
-function heroGameLoop(t){
+function heroGameLoop(timestamp){
 
 	//calculate FPS
-	secondsPassed = (t - frameStart) / 1000;
-	frameStart = t;
+	secondsPassed = (timestamp - frameStart) / 1000;
+	frameStart = timestamp;
 	heroFpsIndicator.innerHTML = Math.round(1/secondsPassed) + 'fps';
 	try {
-		backgroundRender(c,x,t,backgrounds[heroBackgroundIndex].code);
+		backgroundRender(c,x,(new Date() - startTime) / 1000,backgrounds[heroBackgroundIndex].code);
 	} catch (error) {
 
 		let errorMessage = "[Development in progress]";
