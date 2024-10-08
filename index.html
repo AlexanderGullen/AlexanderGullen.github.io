@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8"/>
+	<title>Alexander Gullen</title>
+	<meta name="author" content="Alexander Gullen"/>
+	<meta name="description" content="Hello, I’m Alexander Gullen, an aspiring Software Engineer from Canada. Links to my Email, Github and LinkedIn can be found on this page along with a neat animation, hope you enjoy."/>
+	
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<link rel="stylesheet" href="style.css" />
+
+
+	<!-- Open Graph Protocol Metadata -->
+	<meta property="og:title" content="Alexander Gullen's Portfolio"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://alexmgullen.ca"/>
+	<!-- TODO: update this to a better picture -->
+	<meta property="og:image" content="icons/me.png"/>
+	<meta property="og:image:alt" content="A picture of Alexander Gullen"/>
+
+	<link rel="icon" href="icons/me.ico" type="image/x-icon"/>
+
+
+  </head>
+  <body>
+	<canvas
+        id="background"
+        alt="a dynamic background image for the website"
+	height="1080"
+	width="1920"
+	>
+      	</canvas>
+		
+      	<p id="fps">0fps</p>
+	<div id="hero">
+		<h1>Alexander Gullen</h1>
+		<h2 id="subtitle">[Development In Progress]</h2>
+
+<div id="hero-links">
+	<a href="https://github.com/AlexanderGullen">
+	<svg id="github-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<title>A github icon</title>
+		<circle id="github" cx="25" cy="25" r="10"/>
+		<circle id="github" cx="75" cy="25" r="10"/>
+		<circle id="github" cx="50" cy="75" r="10"/>
+		<!-- left path -->
+		<path d="M25 25L25 42S25 50 32 50L43 50S50 50 50 57L50 75"/>
+		<!-- right path -->
+		<path d="M75 25L75 42S75 50 68 50L57 50S50 50 50 57L50 75"/>
+	</svg>
+	<p>Github</p>
+	</a>
+
+
+	<a href="mailto:developer@alexmgullen.ca">
+	<svg id="email-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    		<title>An email icon</title>
+    		<circle id="email" cx="79" cy="31" r="10"/>
+    		<!-- Envelope -->
+		<path id="letter" d="M21 31L79 31L79 69L21 69L21 31L50 31"/>
+    		<!-- Downwards fold -->
+    		<path id="letter" d="M21 34L50 55L79 34"/>
+    		<!-- Upwards fold -->
+    		<path id="letter" d="M79 69L57 50M43 50L21 69"/>
+  	</svg>
+  	<p>Email</p>
+	</a>
+	<a href="https://www.linkedin.com/in/alex-m-gullen/">
+  	<svg id="linkedin-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  		<title>A social network graph</title>
+    		<path id="edges" d="M50 50V11M50 50l27-28M50 50h39M50 50l27 27M50 50v39M50 50 22 77M50 50H11M50 50 22 22"/>
+    		<circle cx="50" cy="11" r="10"/>
+		<circle cx="77" cy="22" r="10"/>
+		<circle cx="50" cy="89" r="10"/>
+		<circle cx="77" cy="77" r="10"/>
+		<circle cx="89" cy="50" r="10"/>
+		<circle cx="22" cy="77" r="10"/>
+		<circle cx="11" cy="50" r="10"/>
+		<circle cx="22" cy="22" r="10"/>
+		<circle id="root" cx="50" cy="50" r="10"/>
+    	</svg>
+    	<p>Linkedin</p>
+	</a>
+	</div>
+	<footer>
+		<div id="selector">
+		</div>
+	</footer>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>

@@ -1,0 +1,12 @@
+[
+    {
+	"key": 0,
+        "title": "default-dweet",
+        "code": "c.width=1920;for(i=0;i<9;i++)x.fillRect(400+i*100+S(t)*300,400,50,200)"
+    },
+    {
+	"key":1,
+        "title": "slightly-smokey",
+        "code": "x.fillRect(0,0,2e3,2e3);for(var i=2e3;i>=0;x.fillRect(Math.sin((t*.01)+i)*2e3,Math.tan((t*.01)+i*i--)*100,5,5))x.fillStyle = R(i,i,i)"
+    }
+]
