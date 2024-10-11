@@ -49,9 +49,17 @@ function backgroundRender(canvas,context,time,code){
 
 const [subtitleGaussianValue,heroBackgroundGaussianValue] = boxMuller(Math.random(),Math.random())
 
-//TODO: update these to a more mathematically rigourous (and computationally efficient) value
-const subtitleIndex = Math.abs(Math.floor(subtitleGaussianValue * subtitles.length) % subtitles.length)
-let heroBackgroundIndex = 1 //Math.abs(Math.floor(heroBackgroundGaussianValue * backgrounds.length) % backgrounds.length)
+const subtitleIndex = Math.floor(
+	(subtitleGaussianValue+3.5) //transform the range [-3.5,3.5] to [0,7]
+	* 0.1428571428571 // multiply by 7 in a computationally efficient way to create range [0,1]
+	* (subtitles.length+1) // multiply by the number of subtitles to produce range [0,subtitles.length+1] which will be transformed into [0,subtitles.length] by Math.floor
+	);
+
+let heroBackgroundIndex = Math.floor(
+	(heroBackgroundGaussianValue+3.5)
+	* 0.1428571428571
+	* (backgrounds.length+1)
+	);
 
 /* Subtitle */
 
