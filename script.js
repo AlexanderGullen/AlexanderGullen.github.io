@@ -52,13 +52,13 @@ const [subtitleGaussianValue,heroBackgroundGaussianValue] = boxMuller(Math.rando
 const subtitleIndex = Math.floor(
 	(subtitleGaussianValue+3.5) //transform the range [-3.5,3.5] to [0,7]
 	* 0.1428571428571 // multiply by 7 in a computationally efficient way to create range [0,1]
-	* (subtitles.length+1) // multiply by the number of subtitles to produce range [0,subtitles.length+1] which will be transformed into [0,subtitles.length] by Math.floor
+	* (subtitles.length) // multiply by the number of subtitles to produce range [0,subtitles.length+1] which will be transformed into [0,subtitles.length] by Math.floor
 	);
 
 let heroBackgroundIndex = Math.floor(
 	(heroBackgroundGaussianValue+3.5)
 	* 0.1428571428571
-	* (backgrounds.length+1)
+	* (backgrounds.length)
 	);
 
 /* Subtitle */
@@ -82,6 +82,7 @@ let secondsPassed = 0;
 let frameStart = 0;
 //TODO: replace "new Date()" with a more modern version
 let startTime = new Date();
+console.log(subtitleIndex)
 console.log(heroBackgroundIndex)
 
 function heroGameLoop(timestamp){
