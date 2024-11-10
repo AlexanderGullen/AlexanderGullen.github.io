@@ -1,0 +1,32 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ocean background -->
+  <rect width="800" height="400" fill="#a0d8f1"/>
+
+  <!-- Basic continents outline -->
+  <path fill="#c2b280" stroke="#000" stroke-width="0.5"
+    d="M75,225 l25,-15 20,15 10,-10 20,15 10,-20 40,-30 20,-10 25,5 25,-10
+    l15,20 l40,10 l10,-20 l20,10 l15,25 l35,-10 l30,15 l15,-15 l10,20 l15,10
+    l10,25 l20,-10 l15,25 l-20,20 l-25,-15 l-10,15 l-20,10 l-20,25 l20,15 l10,
+    25 l10,-10 l25,5 l15,25 l-15,10 l-15,25 l-15,-5 l-10,15 l-25,-5 l-15,15 l-5,
+    10 l-15,-5 l-25,5 l-10,-10 l-5,10 l-20,10 l10,15 l10,10 l-10,15 l10,20 l-15,
+    10 l-15,15 l-25,-10 l-5,15 l-10,15 l-15,-5 l-10,20 l-15,-5 l-5,25 l-10,-10
+    l-5,15 l-5,-5 l-20,10 l-5,15 l-10,-10 l-10,20 l-20,-10 l-10,-15 l-20,5 l-10,
+    -5 l-5,10 l-15,10 l-15,-5 l-10,10 l-15,5 l-15,15 l-25,-5 l-5,20 l-10,10 l-5,
+    -10 l-15,15 l-5,10 l-15,5 l-20,-10 l-5,-20 l-10,5 l-5,20 l-10,-5 l-15,10 l-10,
+    -10 l-5,10 l-10,0 l-15,-10 l-15,-5 l-15,15 l-20,-10 l-15,10 l-10,-5 l-5,5
+    l-10,10 l-5,5 l-20,5 l-20,-15 l-5,10 l-20,-10 l-5,10 l-20,10 l-15,-15 l-10,
+    -20 l-20,10 l-5,-10 l-15,5 l-20,-10 l-5,-20 l-15,5 l-15,-15 l-5,5 l-15,-10
+    l-5,-10 l-20,-5 l-5,15 l-20,-10 l-5,10 l-15,-5 l-15,5 l-10,-5 l-10,-10 l-5,5
+    l-10,5 l-15,-10 l-5,10 l-5,-5 l-10,10 l-15,5 l-15,-5 l-10,-5 l-15,5 l-10,-15
+    l-10,5 l-5,-10 l-15,5 l-15,-5 l-10,-15 l-5,-10 l5,-5 z"
+  />
+
+  <!-- Optional: Labels for continents or regions -->
+  <text x="180" y="120" font-family="Arial" font-size="14" fill="#333">North America</text>
+  <text x="300" y="200" font-family="Arial" font-size="14" fill="#333">South America</text>
+  <text x="400" y="80" font-family="Arial" font-size="14" fill="#333">Europe</text>
+  <text x="520" y="160" font-family="Arial" font-size="14" fill="#333">Africa</text>
+  <text x="620" y="100" font-family="Arial" font-size="14" fill="#333">Asia</text>
+  <text x="740" y="250" font-family="Arial" font-size="14" fill="#333">Australia</text>
+  <text x="520" y="330" font-family="Arial" font-size="14" fill="#333">Antarctica</text>
+</svg>

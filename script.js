@@ -1,5 +1,5 @@
-import subtitles from "./objects/subtitles.json" with { type: "json" };
-import backgrounds from "./objects/backgrounds.json" with { type: "json" };
+import subtitles from "/objects/subtitles.json" with { type: "json" };
+import backgrounds from "/objects/backgrounds.json" with { type: "json" };
 
 /* Utilities */
 
