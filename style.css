@@ -154,3 +154,9 @@ svg:hover {
 	margin-top: 20px;
 	color: #ffffff;
 }
+
+#content > pre {
+	margin: 25px;
+	overflow-x: scroll;
+	scrollbar-width: thin;
+}

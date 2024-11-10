@@ -53,7 +53,7 @@
 
 		<p>here is the response provided by ChatGPT:</p>
 
-		<samp>
+		<pre><samp>
 An SVG (Scalable Vector Graphics) is an XML-based format for vector graphics that allows images to scale without losing quality. SVGs are commonly used for icons, logos, illustrations, and other graphics on the web because they can be resized to any dimension and maintain their crispness. This format is particularly valuable for responsive design and high-resolution displays.
 Some advantages of SVGs include:
 1.	Scalability: Vector-based, so they don’t pixelate at any size.
@@ -63,6 +63,7 @@ Some advantages of SVGs include:
 SVGs can be created using design software like Adobe Illustrator or Inkscape, or they can be hand-coded if the graphic is simple enough.
 
 		</samp>
+		</pre>
 
 		<p>“Simple enough” eh? So I decided to give ChatGPT a “simple enough” prompt to start out with:</p>
 
@@ -70,6 +71,7 @@ SVGs can be created using design software like Adobe Illustrator or Inkscape, or
 		
 		<p>It’s response was:</p>
 
+		<pre>
 		<samp>
 
 Here’s a simple SVG code for a world map. This uses the popular Robinson projection, which provides a pleasingly balanced view of the entire world. The code below will render an approximate outline of global continents, including basic land and ocean colors.
@@ -111,6 +113,7 @@ Explanation:
 3.	Text Labels: The &lttext&gt elements provide labels for major regions or continents.
 This SVG provides a basic approximation, but you could refine it by using more detailed coordinates or software-generated paths for a higher-fidelity world map.
 		</samp>
+		</pre>
 
 		<p>For a little bit of context, since it’s impossible to draw an round object, and especially an object shaped like earth onto a flat surface, for that reason Cartographers use Projections to approximate the shape of the earth, each projection has it’s benefits and drawbacks, but what’s important for the moment is seeing how ChatGPT compares to regular old Robinson. Here is Wikipedia’s Robinson projection:</p>
 
@@ -148,6 +151,7 @@ This SVG provides a basic approximation, but you could refine it by using more d
 
 		<p>Output:</p>
 
+		<pre>
 		<samp>
 To create a map of the world in the Dymaxion projection using Python, we'll need to use the matplotlib library in combination with the cartopy library. Cartopy doesn’t natively support the Dymaxion projection, but we can approximate it using a collection of polygons for each face of the polyhedron that the projection typically uses. This script outlines the world on each triangular face in an approximate Dymaxion style.
 Here’s how to set it up:
@@ -196,6 +200,7 @@ Explanation:
 3.	Features: cartopy.feature.LAND and OCEAN add a basic world outline.
 This code provides a visual approximation; however, the Dymaxion projection requires precise geometric transformations for an accurate result, which would typically require specialized GIS tools or projection libraries.
 		</samp>
+		</pre>
 
 		<p>Which when run produces:</p>
 
@@ -209,6 +214,7 @@ This code provides a visual approximation; however, the Dymaxion projection requ
 
 		<p>Output:</p>
 
+		<pre>
 		<samp>
 to display a map of the world in the Robinson projection using matplotlib and cartopy, we can use ccrs.Robinson as the projection for our map. This projection is commonly used for world maps as it provides a visually balanced view of the entire world.
 Here’s a script that displays a world map using the Robinson projection:
@@ -243,6 +249,7 @@ Explanation:
 4.	Title: We set a title for the map using plt.title().
 This code will display a clean and visually appealing world map using the Robinson projection.
 		</samp>
+		</pre>
 
 		<p>Result:</p>
 
@@ -286,6 +293,7 @@ Sweden,0.32,0.53”
 
 		<p>Output:</p>
 
+		<pre>
 		<samp>
 To add the excitement (blue) and nervousness (red) values as labels on a world map using Matplotlib, we can parse the data and place each label on its respective country. This example will use Basemap from the mpl_toolkits.basemap library to approximate the country positions for label placement.
 Here's how you can approach this:
@@ -398,24 +406,17 @@ Explanation:
 •	Text Labels: Excitement values are displayed in blue and nervousness values in red, positioned slightly below excitement.
 Note
 For more precise positioning, country coordinates might need adjustment, or you could use libraries like geopy for exact coordinates. This script provides a rough approximation for a global visualization.
-	</samp>
+		</samp>
+		</pre>
 
-	<p>Resulting in the final version of the map:</p>
+		<p>Resulting in the final version of the map:</p>
 
-	<img alt="a map with red an blue labels superimposed over each other" src="./try5.png">
-
-
-	<p>I think that’s a fitting visualization for the results of our research today, hopefully you found this as entertaining as I did. If you were able to get better results, I'd love to see them, it feels like my unfamiliarity with the tools was definitely a major drawback when making the map and I'd love to learn new ways to use these awesome tools.</p>
-
-	<p>Hope you enjoyed the article, I had a blast trying to use LLMs for something the fundamentally weren’t meant for intentionally, keep experimenting and have fun out there 🚀.</p>
+		<img alt="a map with red an blue labels superimposed over each other" src="./try5.png">
 
 
+		<p>I think that’s a fitting visualization for the results of our research today, hopefully you found this as entertaining as I did. If you were able to get better results, I'd love to see them, it feels like my unfamiliarity with the tools was definitely a major drawback when making the map and I'd love to learn new ways to use these awesome tools.</p>
 
-
-
-
-
-
+		<p>Hope you enjoyed the article, I had a blast trying to use LLMs for something the fundamentally weren’t meant for intentionally, keep experimenting and have fun out there 🚀.</p>
 		</div>
 	</div>
   </body>
