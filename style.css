@@ -99,7 +99,7 @@ h1 {
 	color: #ff7300;
 }
 
-svg {
+#hero-links > a > svg {
 	width: 70vw;
 	max-width: 75px;
 	stroke-width: 3px;
@@ -159,4 +159,10 @@ svg:hover {
 	margin: 25px;
 	overflow-x: scroll;
 	scrollbar-width: thin;
+}
+
+#map {
+	margin: 25px;
+	width: calc(100% - 50px);
+	height: auto;
 }
