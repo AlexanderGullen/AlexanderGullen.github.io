@@ -82,8 +82,6 @@ let secondsPassed = 0;
 let frameStart = 0;
 //TODO: replace "new Date()" with a more modern version
 let startTime = new Date();
-console.log(subtitleIndex)
-console.log(heroBackgroundIndex)
 
 function heroGameLoop(timestamp){
 
