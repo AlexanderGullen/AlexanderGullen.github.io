@@ -19,7 +19,7 @@
 	<meta property="og:image:width" content="1200"/>
 	<meta property="og:image:height" content="762"/>
 	<meta property="og:image:type" content="image/jpg"/>
-	<meta property="article:published_time" contents="2024-10-11T01:00:00Z"/>
+	<meta property="article:published_time" contents="2024-13-11T01:00:00Z"/>
 	<meta property="article:author" content="https://alexmgullen.ca"/>
 	<meta property="article:section" content="Top"/>
 	<meta property="article:tag" content="Mapping"/>
@@ -40,22 +40,19 @@
 	<div id="hero">
 		<div id="content">
 		<h1 hidden="true"></h1>
-		<h2>November 12th 2024</h2>
+		<h2>November 13th 2024</h2>
 		<h2 id="subtitle" hidden="true">[Development In Progress]</h2>
-		<p>Day 13 of the 30DayMapChallenge, today's theme is "new tool", so I decided to tryout a JavaScript library I have always wanted to use, but never really had a use case for: D3.js</p>
+		<p>Day 13 of the 30DayMapChallenge, today's theme is "new tool", thought realistically everything is so very new to me, I wanted to tryout a JavaScript library I have always wanted to use, but never really had a use case for: D3.js</p>
 
 
 		<canvas id="map" width="1200" height="762"></canvas>
-
-
 		<script type="module">
 			const width = 1200;
 			const height = 762;
 			const canvas = document.getElementById('map')
 			const context = canvas.getContext('2d');
 
-			console.log(context);
-			const projection = d3.geoAlbers();
+			const projection = d3.geoOrthographic();
 
 			const lonLatPoint = [16.34636, 48.24332]
 
@@ -63,47 +60,38 @@
 
 			const geoGenerator = d3.geoPath(projection,context);
 
-			console.log(projection);
-			console.log(geoGenerator);
-			console.log(d3.select('#map g.map'));
-			
-			console.log("about to run")
 			const data = await d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
 
-			console.log(data)
-			console.log(data.features)
+			function draw(data, context, geoGenerator){
+				context.beginPath();
+				geoGenerator(data);
+				context.fillStyle = '#FF0000';
+				context.fill();
 
-
-			context.beginPath();
-			geoGenerator(data);
-			context.fillStyle = '#FF0000';
-			context.fill();
-
-			context.strokeStyle = '#0000FF';
-			context.stroke();
-			/*
-
-			for (feature in data.features){
-				console.log('loop')
-				console.log(feature)
-
-				ctx.beginPath();
-				pathGenerator(feature);
-				ctx.fillStyle = '#FF0000';
-				ctx.fill();
-
-				ctx.strokeStyle = '#0000FF';
-				ctx.stroke();
-
-
+				context.strokeStyle = '#0000FF';
+				context.stroke();
 			}
 
-			*/
 
+
+			function gameLoop(timestamp){
+
+				draw(data,context,geoGenerator);
+				//context.clearRect(0,0,1200,762)
+
+				requestAnimationFrame(gameLoop);
+			}
+			
+			//only for advertising purposes:
+			draw(data,context,geoGenerator)
+
+			requestAnimationFrame(gameLoop)
 		</script>
 
+		<p> full credit to <a href="https://www.yan-holtz.com">Yan Holts</a> for the amazing globe svg, it really came in handy!</p> 
 
-		<p> see you tomorrow for the "A world Map" Challenge.</p>
+
+		<p> see you tomorrow for the next challenge "A new tool", who knows maybe I'll be able to get the dymaxion to work this time.</p>
 
 
 		</div>
