@@ -49,16 +49,9 @@
 		<svg id="map" width="1200" height="762"></svg>
 		<script type="module">
 
-			const toronto_lat = -79.38125252712105; 
-			const toronto_lon = 43.645318512105995;
-
 			const map = d3.select('#map').attr('viewBox','0 0 ' + 1200 + ' ' + 762);
 			const width = map.attr('width');
 			const height = map.attr('height');
-
-			console.log(width);
-			console.log(height);
-
 
 			const slider = document.getElementById('slider');
 
@@ -72,11 +65,6 @@
 					return turf.rewind(feature,{reverse:true});
 				})
 
-				const red = (data) => { 
-					console.log(data.properties.Name)
-					return 'blue' 
-				}
-				
 				projection.fitSize([width,height],{'type':'FeatureCollection','features':data.features});
 
 				map
@@ -85,7 +73,10 @@
 				.data(data.features)
 				.enter()
 				.append('path')
-				.attr('fill',red)
+				.attr('fill',(data)=>{
+					console.log(data.properties.Color)
+					return data.properties.Color
+				})
 				.attr('d', d3.geoPath().projection(projection))
 				.style('stroke','black')
 
@@ -106,50 +97,6 @@
 				})
 			})
 
-			/*
-			const data = await d3.json("/objects/world.geojson").then((data)=>{
-
-				console.log("Data is fetch");
-				console.log(data);
-
-				map
-				.append('g')
-				.selectAll('path')
-				.data(data.features)
-				.enter()
-				.append('path')
-				.attr('fill','red')
-				.attr('d', d3.geoPath()
-					.projection(projection)
-					)
-				.style('stroke','none');
-			})
-			
-
-			const ontario = await d3.json('./province.geojson').then((data)=>{
-				console.log('ontario is fetch')
-
-				console.log(data.features)
-
-				data.features = data.features.map((feature) => {
-					return turf.rewind(feature,{reverse:true});
-				})
-
-				projection.fitSize([width,height],{'type':'FeatureCollection','features':data.features});
-
-				console.log(data.features)
-
-				map
-				.append('g')
-				.selectAll('path')
-				.data(data.features)
-				.enter()
-				.append('path')
-				.attr('fill','purple')
-				.attr('d', d3.geoPath().projection(projection));
-			})
-
-			*/
 		</script>
 
 		</div>
