@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8"/>
+	<title>30DayMapChallenge - Day 14</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<link rel="stylesheet" href="/style.css" />
+
+
+	<!-- Open Graph Protocol Metadata -->
+	<meta property="og:title" content="Day 14 of the 2024 30DayMapChallenge"/>
+	<meta property="og:site_name" content="Alexander's Articles"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:locale" content="en_US"/>
+	<link rel="canonical" href="https://alexmgullen.ca/articles/30DayMapChallenge-Day15-2024/index.html"/>
+	<meta property="og:url" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day15-2024/index.html"/>
+	<meta property="og:image" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day15-2024/ogp-header.png"/>
+	<meta property="og:image:alt" content=""/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="762"/>
+	<meta property="og:image:type" content="image/jpg"/>
+	<meta property="article:published_time" contents="2024-15-11T01:00:00Z"/>
+	<meta property="article:author" content="https://alexmgullen.ca"/>
+	<meta property="article:section" content="Top"/>
+	<meta property="article:tag" content="Mapping"/>
+
+	<link rel="icon" href="/icons/me.ico" type="image/x-icon"/>
+	<script src="/libs/d3.v7.min.js"></script>
+	<script src="/libs/turf.min.js"></script>
+  </head>
+  <body>
+	<canvas
+        id="background"
+        alt="a dynamic background image for the website"
+	height="1080"
+	width="1920"
+	>
+      	</canvas>
+	<a id="home-btn" href="/" alt="home">Home</a>
+      	<p id="fps">0fps</p>
+	<div id="hero">
+		<div id="content">
+		<h1 hidden="true"></h1>
+		<h2>November 15th 2024</h2>
+		<h2 id="subtitle" hidden="true">[Development In Progress]</h2>
+		<p>Day 14 of the 30DayMapChallenge, today's theme is "A world Map", since I had already made a world map yesterday and I wanted to explore d3 a little more in depth I decided to stick with the same map as yesterday, but added some rotation capabilities so you can see the "whole world"</p>
+
+
+		<svg id="map" width="1200" height="762"></svg>
+		<script type="module">
+
+			const toronto_lat = -79.38125252712105; 
+			const toronto_lon = 43.645318512105995;
+
+			const map = d3.select('#map').attr('viewBox','0 0 ' + 1200 + ' ' + 762);
+			const width = map.attr('width');
+			const height = map.attr('height');
+
+			console.log(width);
+			console.log(height);
+
+
+			const slider = document.getElementById('slider');
+
+			const projection = d3.geoMercator();
+
+
+			const data = await d3.json('./districts.geojson').then((data) => {
+				console.log('data is fetch');
+				
+				data.features = data.features.map((feature) => {
+					return turf.rewind(feature,{reverse:true});
+				})
+
+				const red = (data) => { 
+					console.log(data.properties.Name)
+					return 'blue' 
+				}
+				
+				projection.fitSize([width,height],{'type':'FeatureCollection','features':data.features});
+
+				map
+				.append('g')
+				.selectAll('path')
+				.data(data.features)
+				.enter()
+				.append('path')
+				.attr('fill',red)
+				.attr('d', d3.geoPath().projection(projection))
+				.style('stroke','black')
+
+				map
+				.append('g')
+				.selectAll('text')
+				.data(data.features)
+				.enter()
+				.append('text').text((data) => { return data.properties.Name })
+				.attr('text','something')
+				.attr('x',(data)=> {
+				console.log(data)
+				console.log(d3.geoPath().projection(projection).centroid(data))
+					return d3.geoPath().projection(projection).centroid(data)[0]
+				})
+				.attr('y',(data)=>{
+					return d3.geoPath().projection(projection).centroid(data)[1]
+				})
+			})
+
+			/*
+			const data = await d3.json("/objects/world.geojson").then((data)=>{
+
+				console.log("Data is fetch");
+				console.log(data);
+
+				map
+				.append('g')
+				.selectAll('path')
+				.data(data.features)
+				.enter()
+				.append('path')
+				.attr('fill','red')
+				.attr('d', d3.geoPath()
+					.projection(projection)
+					)
+				.style('stroke','none');
+			})
+			
+
+			const ontario = await d3.json('./province.geojson').then((data)=>{
+				console.log('ontario is fetch')
+
+				console.log(data.features)
+
+				data.features = data.features.map((feature) => {
+					return turf.rewind(feature,{reverse:true});
+				})
+
+				projection.fitSize([width,height],{'type':'FeatureCollection','features':data.features});
+
+				console.log(data.features)
+
+				map
+				.append('g')
+				.selectAll('path')
+				.data(data.features)
+				.enter()
+				.append('path')
+				.attr('fill','purple')
+				.attr('d', d3.geoPath().projection(projection));
+			})
+
+			*/
+		</script>
+
+		</div>
+	</div>
+  </body>
+  <script type="module" src="/script.js"></script>
+</html>
