@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8"/>
+	<title>30DayMapChallenge - Day 14</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<link rel="stylesheet" href="/style.css" />
+
+
+	<!-- Open Graph Protocol Metadata -->
+	<meta property="og:title" content="Day 15 of the 2024 30DayMapChallenge"/>
+	<meta property="og:site_name" content="Alexander's Articles"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:locale" content="en_US"/>
+	<link rel="canonical" href="https://alexmgullen.ca/articles/30DayMapChallenge-Day16-2024/index.html"/>
+	<meta property="og:url" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day16-2024/index.html"/>
+	<meta property="og:image" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day16-2024/ogp-header.png"/>
+	<meta property="og:image:alt" content=""/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="762"/>
+	<meta property="og:image:type" content="image/jpg"/>
+	<meta property="article:published_time" contents="2024-16-11T01:00:00Z"/>
+	<meta property="article:author" content="https://alexmgullen.ca"/>
+	<meta property="article:section" content="Top"/>
+	<meta property="article:tag" content="Mapping"/>
+
+	<link rel="icon" href="/icons/me.ico" type="image/x-icon"/>
+	<script src="/libs/d3.v7.min.js"></script>
+	<script src="/libs/d3-tile/d3-tile.min.js"></script>
+	<script src="/libs/turf.min.js"></script>
+  </head>
+  <body>
+	<canvas
+        id="background"
+        alt="a dynamic background image for the website"
+	height="1080"
+	width="1920"
+	>
+      	</canvas>
+	<a id="home-btn" href="/" alt="home">Home</a>
+      	<p id="fps">0fps</p>
+	<div id="hero">
+		<div id="content">
+		<h1 hidden="true"></h1>
+		<h2>November 16th 2024</h2>
+		<h2 id="subtitle" hidden="true">[Development In Progress]</h2>
+		<p>Day 16 of the 30DayMapChallenge, today's theme is "Choropleth". While browsing <a https="databank.worldbank.org">The world Bank Databank</a> and came across a "Ease of doing Business Score" scoring countries from 0 (Lowest) to 100 (Highest). While this data product was discontinued in 2019 in favor of more granular data tracking techniques, I find this data interesting since it consideres legislation that makes it difficult to start a business, something not usually addressed when talking about the developing world. more details have been included below the map.</p>
+
+
+		<svg id="map"></svg>
+		<script type="module">
+
+			const width = 1200
+			const height = 762
+
+			const svg = d3.select('svg')
+			.attr('viewBox',`0 0 ${width} ${height}`)
+
+
+			const path = d3.geoPath()
+
+			const projection = d3.geoMercator()
+			.center([0,0])
+			.translate([width / 2, height / 2])
+
+			var colorScale = d3.scaleLinear()
+			.domain([0,100])
+			.range(['#ea2525','#005b24'])
+
+			var data = await d3.json('./world_with_data.geojson')
+			.then(draw)
+
+			function draw(topology){
+
+				var mouseOver = function(d){
+
+					var indicator = d3.select('#indicator')
+					d3.selectAll('.Country')
+					.transition()
+					.duration(200)
+					.style('opacity', 0.5)
+					d3.select(this)
+					.transition()
+					.duration(200)
+					.style('opacity', 1)
+					.style('stroke','#010101')
+				}
+
+				var mouseLeave = function(d){
+
+					d3
+					.select('#indicator')
+					.exit()
+
+					d3.selectAll('.Country')
+					.transition(200)
+					.style('opacity', 1)
+
+				}
+
+
+				svg.append('g')
+				.selectAll('path')
+				.data(topology.features)
+				.enter()
+				.append('path')
+				.attr('d',d3.geoPath().projection(projection))
+				.attr('stroke','#000000')
+				.attr('fill', (d) => {
+				return colorScale(d.properties.output_field_2)
+				})
+				.attr('class','Country')
+				.on('mouseover',mouseOver)
+				.on('mouseleave',mouseLeave)
+
+
+				// display the gradient
+
+
+			const gradient = svg
+			.append('defs')
+			.append('linearGradient')
+			.attr('id','scale')
+
+			topology.features.forEach((d, index) => {
+				const color = colorScale(d.properties.output_field_2)
+				const step = 100 / topology.features.length
+				
+				gradient
+				.append('stop')
+				.attr('offset',0)
+				.attr('stop-color',color)
+
+				gradient
+				.append('stop')
+				.attr('offset', `${index * step}%`)
+				.attr('stop-color',color)
+			})
+
+			svg
+			.append('rect')
+			.attr('x',0)
+			.attr('y',height - 100)
+			.attr('width',260)
+			.attr('height',100)
+			.attr('fill','url(#scale)')
+
+			}
+
+			var title = svg
+			.append('g')
+
+			title
+			.append('rect')
+			.attr('x',0)
+			.attr('y',0)
+			.attr('width',260)
+			.attr('height',100)
+			.attr('fill','#ffffff')
+
+			title.append('text')
+			.attr('x',5)
+			.attr('y',20)
+			.attr('width',250)
+			.attr('height',100)
+			.attr('font-size',24)
+			.text('The World Bank')
+
+			title.append('text')
+			.attr('x',5)
+			.attr('y',50)
+			.attr('width',250)
+			.attr('height',100)
+			.attr('font-size',24)
+			.text('"Ease of doing Business"')
+
+			title.append('text')
+			.attr('x',5)
+			.attr('y',80)
+			.attr('width',250)
+			.attr('height',100)
+			.attr('font-size',24)
+			.text('Score: 2019')
+
+			const attribution = svg
+			.append('g')
+
+			attribution
+			.append('rect')
+			.attr('x', width - 150)
+			.attr('width', 150)
+			.attr('y', height - 25)
+			.attr('height', 25)
+			.attr('fill','#ffffff')
+
+			attribution
+			.append('text')
+			.attr('x', width - 135)
+			.attr('y', height - 5)
+			.attr('width', 150)
+			.attr('height', 25)
+			.text('©')
+			.append('a')
+			.attr('href','https://databank.worldbank.org/')
+			.attr('text-decoration','underline')
+			.attr('fill','#0000ff')
+			.attr('stroke-width','2')
+			.text(' The World Bank')
+
+		</script>
+		<blockquote>
+			<p>
+			"The aggregate ease of doing business score for each economy is the simple average of their scores on each of the 10 topics included in the ranking: starting a business, dealing with construction permits, getting electricity, registering property, getting credit, protecting minority investors, paying taxes, trading across borders, enforcing contracts and resolving insolvency. All topics are weighted equally. Please refer to the Doing Business website for a detailed description of the methodology: <a href="https://www.doingbusiness.org/en/methodology">The World Bank Business Ready Report</a>"
+			</p>
+		</blockquote>
+
+		</div>
+	</div>
+  </body>
+  <script type="module" src="/script.js"></script>
+</html>
