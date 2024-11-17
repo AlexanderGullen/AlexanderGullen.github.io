@@ -26,6 +26,7 @@
 
 	<link rel="icon" href="/icons/me.ico" type="image/x-icon"/>
 	<script src="/libs/d3.v7.min.js"></script>
+	<script src="/libs/d3-tile/d3-tile.min.js"></script>
 	<script src="/libs/turf.min.js"></script>
   </head>
   <body>
@@ -43,14 +44,17 @@
 		<h1 hidden="true"></h1>
 		<h2>November 15th 2024</h2>
 		<h2 id="subtitle" hidden="true">[Development In Progress]</h2>
-		<p>Day 15 of the 30DayMapChallenge, today's theme is "My data", today was mostly more experimenting with d3.js, but I feel much more confident in my understanding of the framework and I absolutely love the path joining for more efficient DOM naviation, even if I'm admittedly rather terrible at it.</p> 
+		<p>Today's theme was "My Data" however while doing some website updates for my toastmasters club I found an amazing oppertunity to employ my newfound cartography competency conbining district data with OpenStreetMap data to create a rather spiffy visualization of all the toastmasters districts in Toronto.</p>
 
 
 		<svg id="map" width="1200" height="762"></svg>
 		<script type="module">
 
+
+			const openStreetMapReference = `© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`
+
 			const map = d3.select('#map').attr('viewBox','0 0 ' + 1200 + ' ' + 762);
-			const width = map.attr('width');
+			const width = map.attr('width')
 			const height = map.attr('height');
 
 			const slider = document.getElementById('slider');
@@ -59,13 +63,35 @@
 
 
 			const data = await d3.json('./districts.geojson').then((data) => {
-				console.log('data is fetch');
 				
 				data.features = data.features.map((feature) => {
 					return turf.rewind(feature,{reverse:true});
 				})
 
 				projection.fitSize([width,height],{'type':'FeatureCollection','features':data.features});
+
+
+
+				// raster tiles
+
+				const url = (x,y,z) => `https://tile.opentopomap.org/${z}/${x}/${y}.png`
+
+				const tile = d3.tile()
+					.size([width,height])
+					.scale(projection.scale() * 2 * Math.PI)
+					.translate(projection([0,0]))
+
+				tile().map(([x,y,z],i,{scale,translate}) => {
+				map
+				.append('image')
+				.attr('xlink:href',url(x,y,z))
+				.attr('x',((x + translate[0]) * scale))
+				.attr('y',((y + translate[1]) * scale))
+				.attr('width',scale)
+				.attr('height',scale)
+				})
+
+				//vector markers
 
 				map
 				.append('g')
@@ -74,8 +100,7 @@
 				.enter()
 				.append('path')
 				.attr('fill',(data)=>{
-					console.log(data.properties.Color)
-					return data.properties.Color
+					return data.properties.Color + "99"
 				})
 				.attr('d', d3.geoPath().projection(projection))
 				.style('stroke','black')
@@ -88,14 +113,39 @@
 				.append('text').text((data) => { return data.properties.Name })
 				.attr('text','something')
 				.attr('x',(data)=> {
-				console.log(data)
-				console.log(d3.geoPath().projection(projection).centroid(data))
 					return d3.geoPath().projection(projection).centroid(data)[0]
 				})
 				.attr('y',(data)=>{
 					return d3.geoPath().projection(projection).centroid(data)[1]
 				})
+
 			})
+
+			const attribution = map
+			.append('g')
+			.attr('id','attribution')
+
+			attribution
+			.append('rect')
+			.attr('x', width - 150)
+			.attr('width', 150)
+			.attr('y', height - 25)
+			.attr('height', 25)
+			.attr('fill','#ffffff')
+
+			attribution
+			.append('text')
+			.attr('x', width - 135)
+			.attr('y', height - 5)
+			.attr('width', 150)
+			.attr('height', 25)
+			.text('©')
+			.append('a')
+			.attr('href','https://www.openstreetmap.org/copyright')
+			.attr('text-decoration','underline')
+			.attr('fill','#0000ff')
+			.attr('stroke-width','2')
+			.text(' OpenStreetMap')
 
 		</script>
 
