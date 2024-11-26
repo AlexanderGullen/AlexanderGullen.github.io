@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8"/>
+	<title>30DayMapChallenge - Day 25</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<link rel="stylesheet" href="/style.css" />
+
+
+	<!-- Open Graph Protocol Metadata -->
+	<meta property="og:title" content="Day 25 of the 2024 30DayMapChallenge"/>
+	<meta property="og:site_name" content="Alexander's Articles"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:locale" content="en_US"/>
+	<link rel="canonical" href="https://alexmgullen.ca/articles/30DayMapChallenge-Day25-2024/index.html"/>
+	<meta property="og:url" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day25-2024/index.html"/>
+	<meta property="og:image" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day25-2024/ogp-header.png"/>
+	<meta property="og:image:alt" content="Heatmap of the canadian province of ontario"/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="762"/>
+	<meta property="og:image:type" content="image/jpg"/>
+	<meta property="article:published_time" contents="2024-25-11T01:00:00Z"/>
+	<meta property="article:author" content="https://alexmgullen.ca"/>
+	<meta property="article:section" content="Top"/>
+	<meta property="article:tag" content="Mapping"/>
+
+	<link rel="icon" href="/icons/me.ico" type="image/x-icon"/>
+	<script src="/libs/d3.v7.min.js"></script>
+	<script src="/libs/d3-tile/d3-tile.min.js"></script>
+	<script src="/libs/turf.min.js"></script>
+  </head>
+  <body>
+	<canvas
+        id="background"
+        alt="a dynamic background image for the website"
+	height="1080"
+	width="1920"
+	>
+      	</canvas>
+	<a id="home-btn" href="/" alt="home">Home</a>
+      	<p id="fps">0fps</p>
+	<div id="hero">
+		<div id="content">
+		<h1 hidden="true"></h1>
+		<h2>November 25th 2024</h2>
+		<h2 id="subtitle" hidden="true">[Development In Progress]</h2>
+
+		<p>Much shorter post for today's map since I'm on the road today, but I did get to experiment with interpolation to get a flat temperature map from the sensors in <a href="https://climate.weather.gc.ca/prods_servs/engineering_e.html">Canadian Weather Energy and Engineering Datasets </a>. Enjoy.</p>
+
+		<img src="./ogp-header.png" alt="Heatmap of the canadian province of ontario"/>
+
+		</div>
+	</div>
+  </body>
+  <script type="module" src="/script.js"></script>
+</html>
