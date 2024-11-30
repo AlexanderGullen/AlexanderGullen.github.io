@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8"/>
+	<title>30DayMapChallenge - Day 29</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<link rel="stylesheet" href="/style.css" />
+
+
+	<!-- Open Graph Protocol Metadata -->
+	<meta property="og:title" content="Day 29 of the 2024 30DayMapChallenge"/>
+	<meta property="og:site_name" content="Alexander's Articles"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:locale" content="en_US"/>
+	<link rel="canonical" href="https://alexmgullen.ca/articles/30DayMapChallenge-Day29-2024/index.html"/>
+	<meta property="og:url" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day29-2024/index.html"/>
+	<meta property="og:image" content="https://alexmgullen.ca/articles/30DayMapChallenge-Day29-2024/ogp-header.png"/>
+	<meta property="og:image:alt" content="Map of the world with markers clusterd on it displaying the location of major data centers assorted by color, mostly centered around tech hubs."/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="762"/>
+	<meta property="og:image:type" content="image/jpg"/>
+	<meta property="article:published_time" contents="2024-29-11T01:00:00Z"/>
+	<meta property="article:author" content="https://alexmgullen.ca"/>
+	<meta property="article:section" content="Top"/>
+	<meta property="article:tag" content="Mapping"/>
+
+	<link rel="icon" href="/icons/me.ico" type="image/x-icon"/>
+	<script src="/libs/d3.v7.min.js"></script>
+	<script src="/libs/d3-tile/d3-tile.min.js"></script>
+	<script src="/libs/turf.min.js"></script>
+  </head>
+  <body>
+	<canvas
+        id="background"
+        alt="a dynamic background image for the website"
+	height="1080"
+	width="1920"
+	>
+      	</canvas>
+	<a id="home-btn" href="/" alt="home">Home</a>
+      	<p id="fps">0fps</p>
+	<div id="hero">
+		<div id="content">
+		<h1 hidden="true"></h1>
+		<h2>November 25th 2024</h2>
+		<h2 id="subtitle" hidden="true">[Development In Progress]</h2>
+
+		<p>Having just completed my AI-900 exam, I wanted to return to one of the first visualizations </p>
+
+		<p>I also stumbled upon python's handy antigravity module while doing the data cleaning for today's viz, I'd highly reccomend checking it out in the "C:\Python311\Lib"(or wherever you linux nerds store your python install) directory, I'd highly reccomend you check it out.</p>
+
+
+		<svg id="map"></svg>
+		<script type="module">
+
+			const colorMap = {
+				'AWS':"#0000ff",
+				'Google Cloud Platform':'#ff0000',
+				'Alibaba': '#ff6a00',
+				'IBM Cloud': '#00ff00'
+			}
+
+			console.log(colorMap['Alibaba'])
+
+			import {geoPolyhedralButterfly} from "https://cdn.skypack.dev/d3-geo-projection@4";
+
+	
+			const width = 1200
+			const height = 762
+		
+			const map = d3.select('#map')
+			.attr('viewBox',`0 0 ${width} ${height}`)
+
+			const path = d3.geoPath()
+
+			const projection = d3.geoMercator() //geoPolyhedralButterfly()
+
+			const basemap = d3.json('./world.geojson').then((data) => {
+
+				projection.fitSize([width,height],{'type':'FeatureCollection','features':data.features})
+				map
+				.append('g')
+				.selectAll('path')
+				.data(data.features)
+				.enter()
+				.append('path')
+				.attr('d',d3.geoPath().projection(projection))
+
+				const datacenters = d3.csv('./data-centers.csv').then(draw)
+
+			})
+
+			function draw(data){
+
+				map
+				.append('g')
+				.selectAll('circle')
+				.data(data)
+				.enter()
+				.append('circle')
+				.attr('id',(d) => {
+				return d.Name
+				})
+				.attr('cx',(d) => { 
+				return projection([d.Longitude,d.Latitude])[0]
+				})
+				.attr('cy',(d) => { 
+				return projection([d.Longitude,d.Latitude])[1]
+				})
+				.attr('r','5px')
+				.style('fill',(d) => {
+				return colorMap[d.Owner] + 'cc'
+				})
+
+				const legend = map.append('g')
+
+				legend.append('rect')
+				.attr('x',0)
+				.attr('y',height - 300)
+				.attr('width',300)
+				.attr('height',300)
+				.style('fill','#ffffff')
+
+				var start = 10
+
+				for(let [cloud,color] of Object.entries(colorMap)){
+
+				legend
+				.append('circle')
+				.attr('cx',50)
+				.attr('cy',height-300 + 40 + start)
+				.attr('r','20px')
+				.attr('fill',color)
+
+				legend
+				.append('text')
+				.attr('x', 100)
+				.attr('y', height-300 + 45 + start)
+				.style('font','90px')
+				.text(cloud)
+
+				start += 70
+				}
+
+			}
+
+
+		</script>
+
+		<p>I orignally made this map to submit to <a href="https://www.visualcapitalist.com/"> Visual Capitalist</a>, in fact around this time last year I was agonizing over every detail of creating a single post, whereas in the span of less than a month I have learned more about D3, QGS, Geodata systems, data visualization, python programming, and so many other skills I'm already finding usefull.<p>
+
+		<p>Anyways, Fail fast, learn lots, Have fun. Hope to see you tomorrow.</p>
+
+
+
+
+
+		</div>
+	</div>
+  </body>
+  <script type="module" src="/script.js"></script>
+</html>

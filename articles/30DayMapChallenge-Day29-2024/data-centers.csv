@@ -1,0 +1,168 @@
+﻿Owner,Latitude,Longitude,Name
+Azure,37.3719,-79.8164,East US
+Azure,36.6681,-78.3889,East US 2
+Azure,29.4167,-98.5,South Central US
+Azure,47.233,-119.852,West US 2
+Azure,33.448376,-112.074036,West US 3
+Azure,-33.86,151.2094,Australia East
+Azure,1.283,103.833,Southeast Asia
+Azure,53.3478,-6.2597,North Europe
+Azure,60.67488,17.14127,Sweden Central
+Azure,50.941,-0.799,UK South
+Azure,52.3667,4.9,West Europe
+Azure,41.5908,-93.6208,Central US
+Azure,-25.73134,28.21837,South Africa North
+Azure,18.5822,73.9197,Central India
+Azure,22.267,114.188,East Asia
+Azure,35.68,139.77,Japan East
+Azure,37.5665,126.978,Korea Central
+Azure,43.653,-79.383,Canada Central
+Azure,46.3772,2.373,France Central
+Azure,50.110924,8.682127,Germany West Central
+Azure,45.46888,9.18109,Italy North
+Azure,59.913868,10.752245,Norway East
+Azure,52.23334,21.01666,Poland Central
+Azure,47.451542,8.564572,Switzerland North
+Azure,25.266666,55.316666,UAE North
+Azure,-23.55,-46.633,Brazil South
+Azure,31.907653,35.007614,Israel Central
+Azure,25.551462,51.439327,Qatar Central
+Azure,37.3719,-79.8164,East US STG
+Azure,41.8819,-87.6278,North Central US
+Azure,37.783,-122.417,West US
+Azure,34.6939,135.5022,Japan West
+Azure,22.470701,70.05773,Jio India West
+Azure,40.89,-110.234,West Central US
+Azure,-34.075691,18.843266,South Africa West
+Azure,-35.3075,149.1244,Australia Central
+Azure,-35.3075,149.1244,Australia Central 2
+Azure,-37.8136,144.9631,Australia Southeast
+Azure,21.146633,79.08886,Jio India Central
+Azure,35.1796,129.0756,Korea South
+Azure,12.9822,80.1636,South India
+Azure,19.088,72.868,West India
+Azure,46.817,-71.217,Canada East
+Azure,43.8345,2.1972,France South
+Azure,53.073635,8.806422,Germany North
+Azure,58.969975,5.733107,Norway West
+Azure,46.204391,6.143158,Switzerland West
+Azure,53.427,-3.084,UK West
+Azure,24.466667,54.366669,UAE Central
+Azure,-22.90278,-43.2075,Brazil Southeast
+IBM Cloud,32.77822,-96.79512,Dallas
+IBM Cloud,45.508867,-73.554242,Montreal
+IBM Cloud,37.33865,-121.88542,San Jose
+IBM Cloud,-23.56287,-46.65468,Sao Paulo
+IBM Cloud,43.653524,-79.383907,Toronto
+IBM Cloud,38.89037,-77.03196,Washington DC
+IBM Cloud,52.3615927,4.890603641,Amsterdam
+IBM Cloud,50.11208,8.68341,Frankfurt
+IBM Cloud,51.50740836,-0.127698693,London
+IBM Cloud,40.41955,-3.69196,Madrid
+IBM Cloud,45.46796,9.18178,Milan
+IBM Cloud,48.86369758,2.361657337,Paris
+IBM Cloud,13.08376,80.28256,Chennai
+IBM Cloud,34.69372591,135.502162,Osaka
+IBM Cloud,1.29088,103.85239,Singapore
+IBM Cloud,-33.86973,151.20825,Sydney
+IBM Cloud,35.68945633,139.6917161,Tokyo
+Google Cloud Platform,24.07602,120.54411,Changhua County
+Google Cloud Platform,22.35195832,114.119386,Hong Kong
+Google Cloud Platform,35.68945633,139.6917161,Tokyo
+Google Cloud Platform,34.69372591,135.502162,Osaka
+Google Cloud Platform,37.566,126.9784,Seoul
+Google Cloud Platform,18.94018,72.83484,Mumbai
+Google Cloud Platform,28.63409,77.21693,Delhi
+Google Cloud Platform,5.11183,96.90314,Jurong
+Google Cloud Platform,-6.17148,106.82649,Jakarta
+Google Cloud Platform,-33.86973,151.20825,Sydney
+Google Cloud Platform,-37.81738,144.96754,Melbourne
+Google Cloud Platform,52.22982708,21.01173152,Warsaw
+Google Cloud Platform,60.57098,27.18944,Hamina
+Google Cloud Platform,40.41955,-3.69196,Madrid
+Google Cloud Platform,50.87575,3.17901,Ghislain
+Google Cloud Platform,52.51604,13.37691,Berlin
+Google Cloud Platform,45.06235,7.67993,Turin
+Google Cloud Platform,51.50740836,-0.127698693,London
+Google Cloud Platform,50.11208,8.68341,Frankfurt
+Google Cloud Platform,53.44402835,6.82966453,Eemshaven
+Google Cloud Platform,47.37707,8.53956,Zurich
+Google Cloud Platform,45.46796,9.18178,Milan
+Google Cloud Platform,48.86369758,2.361657337,Paris
+Google Cloud Platform,25.29424,51.51967,Doha
+Google Cloud Platform,26.43683,50.09083,Dammam
+Google Cloud Platform,32.08413,34.80863,Tel Aviv
+Google Cloud Platform,45.508867,-73.554242,Montréal
+Google Cloud Platform,43.653524,-79.383907,Toronto
+Google Cloud Platform,-23.53104,-46.78629,Osasco
+Google Cloud Platform,-33.43722,-70.65002,Santiago
+Google Cloud Platform,41.25818,-95.8511,Council Bluffs
+Google Cloud Platform,33.18611108,-79.93983366,Berkeley County
+Google Cloud Platform,39.05232,-77.4827,Ashburn
+Google Cloud Platform,39.96199,-83.00275,Columbus
+Google Cloud Platform,32.77822,-96.79512,Dallas
+Google Cloud Platform,45.60155,-121.18343,The Dalles
+Google Cloud Platform,34.05357,-118.24545,Los Angeles
+Google Cloud Platform,40.76031,-111.88822,Salt Lake City
+Google Cloud Platform,36.17193,-115.14001,Las Vegas
+AWS,43.93878024,-120.5585609,Oregon
+AWS,38.73074,-77.71193,Northern Virginia
+AWS,39.76531,-121.90983,Northern California
+AWS,40.4130568,-82.71121519,Ohio
+AWS,45.508867,-73.554242,Montreal
+AWS,51.045113,-114.057141,Calgary
+AWS,-23.56287,-46.65468,São Paulo
+AWS,53.17587985,-8.146006147,Ireland
+AWS,50.11208,8.68341,Frankfurt
+AWS,51.50740836,-0.127698693,London
+AWS,48.86369758,2.361657337,Paris
+AWS,59.33257,18.06683,Stockholm
+AWS,45.46796,9.18178,Milan
+AWS,47.37707,8.53956,Zurich
+AWS,40.22794966,-3.646063105,Spain
+AWS,26.05185877,50.56442695,Bahrain
+AWS,23.91486962,54.32685818,UAE
+AWS,32.08413,34.80863,Tel Aviv
+AWS,-33.91909,18.42198,Cape Town
+AWS,1.29088,103.85239,Singapore
+AWS,35.68945633,139.6917161,Tokyo
+AWS,37.566,126.9784,Seoul
+AWS,18.94018,72.83484,Mumbai
+AWS,22.35195832,114.119386,Hong Kong
+AWS,34.69372591,135.502162,Osaka
+AWS,-6.17148,106.82649,Jakarta
+AWS,17.3949,78.47073,Hyderabad
+AWS,39.9075,116.39723,Beijing
+AWS,37.25,106,Ningxia
+AWS,-33.86973,151.20825,Sydney
+AWS,-37.81738,144.96754,Melbourne
+Alibaba,1.29088,103.85239,Singapore
+Alibaba,-33.86973,151.20825,Australia (Sydney)
+Alibaba,13.75336,100.50483,Thailand (Bangkok)
+Alibaba,3.14789,101.69405,Malaysia (Kuala Lumpur)
+Alibaba,-6.17148,106.82649,Indonesia (Jakarta)
+Alibaba,14.60487,120.98627,Philippines (Manila)
+Alibaba,18.94018,72.83484,India (Mumbai)
+Alibaba,35.68945633,139.6917161,Japan (Tokyo)
+Alibaba,37.566,126.9784,South Korea (Seoul)
+Alibaba,37.5128205,-78.69794871,US (Virginia)
+Alibaba,37.401197,-122.111232,US (Silicon Valley)
+Alibaba,50.11208,8.68341,Germany (Frankfurt)
+Alibaba,51.50740836,-0.127698693,UK (London)
+Alibaba,25.26951,55.30884,UAE (Dubai)
+Alibaba,24.68204,46.68725,SAU (Riyadh)
+Alibaba,0.31685,32.57291,China (Hong Kong)
+Alibaba,36.06488,120.38042,China (Qingdao)
+Alibaba,39.9075,116.39723,China (Beijing)
+Alibaba,40.78341,114.87139,China (Zhangjiakou)
+Alibaba,40.81056,111.65222,China (Hohhot)
+Alibaba,40.993,113.133,China (Ulanqab)
+Alibaba,30.29365,120.16142,China (Hangzhou)
+Alibaba,31.22222,121.45806,China (Shanghai)
+Alibaba,32.06167,118.77778,China (Nanjing)
+Alibaba,22.54554,114.0683,China (Shenzhen)
+Alibaba,23.73333,114.68333,China (Heyuan)
+Alibaba,23.11667,113.25,China (Guangzhou)
+Alibaba,30.66667,104.06667,China (Chengdu)
+Alibaba,26.06139,119.30611,China (Fuzhou)
+Alibaba,30.58333,114.26667,China (Wuhan)
