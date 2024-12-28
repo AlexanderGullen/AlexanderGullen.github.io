@@ -55,11 +55,16 @@ const subtitleIndex = Math.floor(
 	* (subtitles.length) // multiply by the number of subtitles to produce range [0,subtitles.length+1] which will be transformed into [0,subtitles.length] by Math.floor
 	);
 
-let heroBackgroundIndex = Math.floor(
+let heroBackgroundIndex = 1
+
+/*
+        //the value of heroBackgroundIndex will be set to the following code once more backgrounds are created.
+	Math.floor(
 	(heroBackgroundGaussianValue+3.5)
 	* 0.1428571428571
 	* (backgrounds.length)
 	);
+*/
 
 /* Subtitle */
 
